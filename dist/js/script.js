@@ -143,11 +143,29 @@ function menuBurger() {
             if(this.classList.contains('active')) {
                 this.classList.remove('active')
                 innerMenuBurger.classList.remove('active')
+                document.body.classList.remove('look')
             } else {
                 this.classList.add('active')
                 innerMenuBurger.classList.add('active')
+                document.body.classList.add('look')
             }
         })
     }
 }
 menuBurger()
+
+// При скролі додаєми до Header класс.
+function scrollHeader() {
+    let header = document.querySelector('.header')
+
+    if(header) {
+        document.addEventListener('scroll', () => {
+            if(window.scrollY >= 50) {
+                header.classList.add("scroll")
+            } else {
+                header.classList.remove("scroll")
+            }
+        })
+    }
+}
+scrollHeader()

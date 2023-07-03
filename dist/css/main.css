@@ -284,9 +284,11 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 body {
-  font-family: "segoescript", sans-serif;
-  background-size: cover;
-  background-position: center;
+  font-family: "Montserrat-Medium";
+  font-size: 16px;
+}
+body.look {
+  overflow: hidden;
 }
 
 ._container {
@@ -309,14 +311,29 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
   padding: 33px 0;
-  position: relative;
   z-index: 20;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media screen and (max-width: 1027.98px) {
   .header {
     padding: 10px 0;
     background: #fff;
+  }
+}
+@media screen and (min-width: 1027.98px) {
+  .header.scroll {
+    padding: 5px 0;
+    background: #fff;
+    border-bottom: 1px solid #000;
+  }
+  .header.scroll .header__logo a {
+    width: 90px;
   }
 }
 @media screen and (max-width: 1027.98px) {
@@ -351,10 +368,10 @@ body {
 @media screen and (max-width: 1027.98px) {
   .header__inner {
     position: fixed;
-    top: 100px;
+    top: 96px;
     left: 0;
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 96px);
     padding: 15px 0;
     -webkit-transform: translate(-110%);
         -ms-transform: translate(-110%);
@@ -572,6 +589,8 @@ body {
 .header__logo a {
   display: block;
   width: 121px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
 }
 @media screen and (max-width: 1299.98px) {
   .header__logo a {
@@ -740,7 +759,6 @@ body {
 .banner {
   height: 100vh;
   min-height: 700px;
-  margin-top: -135px;
   position: relative;
 }
 @media screen and (max-width: 1027.98px) {
@@ -968,11 +986,19 @@ body {
   display: block;
   margin-bottom: 15px;
   font-size: 30px;
-  line-height: 36x;
+  line-height: 150%;
   font-weight: 700;
   color: #000;
   text-decoration: none;
-  letter-spacing: 7%;
+  letter-spacing: 2px;
+}
+@media screen and (max-width: 767.98px) {
+  .bonuse__description a {
+    font-size: 20px;
+  }
+}
+.bonuse__description a:hover {
+  text-decoration: underline;
 }
 
 .section-catalog__header {
@@ -1012,8 +1038,11 @@ body {
 }
 .section-catalog__item {
   padding: 20px;
+  font-weight: 700;
+  font-size: 18px;
   position: relative;
   border: none;
+  color: rgb(135, 135, 135);
   background: transparent;
 }
 .section-catalog__item:not(:last-child) {
@@ -1028,6 +1057,9 @@ body {
   .section-catalog__item:not(:last-child) {
     margin-right: 0;
   }
+}
+.section-catalog__item.active {
+  color: #000;
 }
 .section-catalog__item.active::before {
   display: block;
@@ -1185,6 +1217,14 @@ body {
 
 }
 
+ @media screen and (min-width: 1027.98px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
  @media screen and (max-width: 1299.98px){
 
 @supports (-webkit-appearance:none){
@@ -1210,6 +1250,14 @@ body {
 }
 
  @media screen and (max-width: 575.98px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 767.98px){
 
 @supports (-webkit-appearance:none){
 
